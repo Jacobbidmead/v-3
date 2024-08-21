@@ -2,6 +2,7 @@
 
 import StarsSvg from "@/app/svg_components/Stars";
 import { motion } from "framer-motion";
+import { HeroMain } from "./Hero.styles";
 
 interface HeroProps {
   backgroundColor: string;
@@ -10,14 +11,14 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ backgroundColor }) => {
   return (
     <>
-      <main style={{ backgroundColor: backgroundColor }}>
+      <HeroMain style={{ backgroundColor: backgroundColor }}>
         <div className='main-page-container'>
           <img src='images/gradient.webp' alt='' className='hero-img' />
           <div className='hi-container'>
             <div className='hi'>Hi, Im Jacob</div>
             <div className='hi-lower'>I make things for the web.</div>
           </div>
-          {/* <StarsSv g className='overlay-svg' /> */}
+          <StarsSvg />
           <motion.div
             initial={"offscreen"}
             whileInView={"onscreen"}
@@ -25,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ backgroundColor }) => {
             viewport={{ once: true, amount: 0.1 }}
             className='contents-container'></motion.div>
         </div>
-      </main>
+      </HeroMain>
     </>
   );
 };

@@ -1,11 +1,12 @@
 import Image from "next/image";
 import stars from "../svg/stars.svg";
+import { StarsContainer } from "./Stars.styles";
 
 const StarsSvg = () => {
   return (
-    <div>
+    <StarsContainer>
       <Image src={stars} alt='Stars' />
-    </div>
+    </StarsContainer>
   );
 };
 

@@ -28,8 +28,8 @@ export const FloatingNav = styled.div<FloatingNavProps>`
   align-items: center;
   border-radius: 30px;
   transition: all 0.4s ease;
-  width: 30%;
-  height: 40px;
+  width: 35%;
+  height: 4rem;
   border: ${(props) => props.border};
   position: relative;
 `;
