@@ -1,5 +1,5 @@
-import type { Config } from "jest";
-import nextJest from "next/jest.js";
+import type { Config } from "@jest/types"; // Import the correct type from @jest/types
+import nextJest from "next/jest";
 
 const createJestConfig = nextJest({
   // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
@@ -7,7 +7,7 @@ const createJestConfig = nextJest({
 });
 
 // Add any custom config to be passed to Jest
-const config: Config = {
+const customJestConfig: Config.InitialOptions = {
   coverageProvider: "v8",
   testEnvironment: "jsdom",
   // Add more setup options before each test is run
@@ -15,4 +15,4 @@ const config: Config = {
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
-export default createJestConfig(config);
+export default createJestConfig(customJestConfig);

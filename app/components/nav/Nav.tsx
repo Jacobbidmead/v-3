@@ -6,7 +6,7 @@ import { FloatingNav, FloatingNavContainer, FnLinks, BackgroundBlock } from "./N
 
 interface NavProps {
   scrollToSection: (sectionId: string) => void;
-  backgroundColor: string;
+  backgroundColo?: string;
 }
 
 const Nav: React.FC<NavProps> = ({ scrollToSection, backgroundColor }) => {
