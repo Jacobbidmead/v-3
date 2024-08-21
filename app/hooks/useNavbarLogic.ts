@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useNavbarLogic = () => {
   const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 601);
-  const [backgroudColor, setBackgroundColor] = useState<string>("rgb(4, 4, 4)");
+  const [backgroundColor, setBackgroundColor] = useState<string>("rgb(4, 4, 4)");
 
   const checkMobile = () => {
     setIsMobile(window.innerWidth < 601);
@@ -24,6 +24,12 @@ const useNavbarLogic = () => {
         setBackgroundColor("rgb(4, 4, 4)");
       }
     };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -33,7 +39,7 @@ const useNavbarLogic = () => {
     }
   };
 
-  return { isMobile, backgroudColor, scrollToSection };
+  return { isMobile, backgroundColor, scrollToSection };
 };
 
 export default useNavbarLogic;
