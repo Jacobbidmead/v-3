@@ -6,10 +6,9 @@ import { FloatingNav, FloatingNavContainer, FnLinks, BackgroundBlock } from "./N
 
 interface NavProps {
   scrollToSection: (sectionId: string) => void;
-  backgroundColo?: string;
 }
 
-const Nav: React.FC<NavProps> = ({ scrollToSection, backgroundColor }) => {
+const Nav: React.FC<NavProps> = ({ scrollToSection }) => {
   const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(null);
   const [navOpacity, setNavOpacity] = useState("rgba(114, 114, 114, 0)");
   const [navBorder, setNavBorder] = useState("none");
@@ -45,7 +44,7 @@ const Nav: React.FC<NavProps> = ({ scrollToSection, backgroundColor }) => {
 
   return (
     <FloatingNavContainer>
-      <FloatingNav backgroundColor={backgroundColor} navBorder={navBorder}>
+      <FloatingNav navBorder={navBorder}>
         {buttons.map((label, index) => (
           <FnLinks key={label} onClick={() => handleButtonClick(index, label)}>
             {label}
