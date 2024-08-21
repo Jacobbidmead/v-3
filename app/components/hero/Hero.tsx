@@ -10,7 +10,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ backgroundColor }) => {
   return (
     <>
-      <div style={{ backgroundColor: backgroundColor }}>
+      <main style={{ backgroundColor: backgroundColor }}>
         <div className='main-page-container'>
           <img src='images/gradient.webp' alt='' className='hero-img' />
           <div className='hi-container'>
@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = ({ backgroundColor }) => {
             viewport={{ once: true, amount: 0.1 }}
             className='contents-container'></motion.div>
         </div>
-      </div>
+      </main>
     </>
   );
 };
