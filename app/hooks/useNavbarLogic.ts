@@ -1,19 +1,31 @@
 import { useState, useEffect } from "react";
 
-const useNavbarLogic = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(window.innerWidth < 601);
+interface NavBarLogicProps {
+  backgroundColor: string;
+  isMobile: boolean;
+  scrollToSection: (sectionId: string) => void;
+}
+
+const useNavbarLogic = (): NavBarLogicProps => {
+  const [isMobile, setIsMobile] = useState<boolean>(
+    typeof window !== "undefined" && window.innerWidth < 601
+  );
   const [backgroundColor, setBackgroundColor] = useState<string>("rgb(4, 4, 4)");
 
   const checkMobile = () => {
-    setIsMobile(window.innerWidth < 601);
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 601);
+    }
   };
 
   useEffect(() => {
-    window.addEventListener("resize", checkMobile);
+    if (typeof window !== "undefined") {
+      window.addEventListener("resize", checkMobile);
 
-    return () => {
-      window.removeEventListener("resize", checkMobile);
-    };
+      return () => {
+        window.removeEventListener("resize", checkMobile);
+      };
+    }
   }, []);
 
   useEffect(() => {
@@ -25,11 +37,13 @@ const useNavbarLogic = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
   }, []);
 
   const scrollToSection = (sectionId: string) => {

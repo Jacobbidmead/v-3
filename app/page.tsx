@@ -1,8 +1,14 @@
+"use client";
+
 import Hero from "./components/hero/Hero";
+import useNavbarLogic from "./hooks/useNavbarLogic";
+import Nav from "./components/nav/Nav";
 
 export default function Home() {
+  const { isMobile, backgroundColor, scrollToSection } = useNavbarLogic();
   return (
-    <main className='flex min-h-screen flex-col items-center justify-between p-24'>
+    <main>
+      <Nav scrollToSection={scrollToSection} />
       <Hero />
     </main>
   );
