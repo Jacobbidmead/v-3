@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main>
       <Nav scrollToSection={scrollToSection} />
-      <Hero />
+      <Hero backgroundColor={backgroundColor} />
     </main>
   );
 }
