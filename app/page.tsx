@@ -7,9 +7,9 @@ import Nav from "./components/nav/Nav";
 export default function Home() {
   const { isMobile, backgroundColor, scrollToSection } = useNavbarLogic();
   return (
-    <main>
+    <main style={{ backgroundColor: backgroundColor }}>
       <Nav scrollToSection={scrollToSection} />
-      <Hero backgroundColor={backgroundColor} />
+      <Hero />
     </main>
   );
 }
