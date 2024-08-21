@@ -1,14 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
+import { FloatingNav, FloatingNavContainer, FnLinks, BackgroundBlock } from "./Nav.styles";
 
 interface NavProps {
   scrollToSection: (sectionId: string) => void;
+  backgroundColor: string;
 }
 
-const Nav: React.FC<NavProps> = ({ scrollToSection }) => {
+const Nav: React.FC<NavProps> = ({ scrollToSection, backgroundColor }) => {
   const [activeButtonIndex, setActiveButtonIndex] = useState<number | null>(null);
   const [navOpacity, setNavOpacity] = useState("rgba(114, 114, 114, 0)");
   const [navBorder, setNavBorder] = useState("none");
@@ -35,7 +36,7 @@ const Nav: React.FC<NavProps> = ({ scrollToSection }) => {
 
   const handleButtonClick = (index: number, label: string) => {
     if (label === "Photo") {
-      router.push("/Photo"); // Replaces useNavigate with Next.js router
+      router.push("/Photo");
     } else {
       setActiveButtonIndex(index);
       scrollToSection(label.toLowerCase());
@@ -43,38 +44,21 @@ const Nav: React.FC<NavProps> = ({ scrollToSection }) => {
   };
 
   return (
-    <div className='floating-nav-container'>
-      <div className='floating-nav' style={{ backgroundColor: navOpacity, border: navBorder }}>
+    <FloatingNavContainer>
+      <FloatingNav backgroundColor={backgroundColor} navBorder={navBorder}>
         {buttons.map((label, index) => (
-          <div
-            key={label}
-            className='fn-links'
-            onClick={() => handleButtonClick(index, label)}
-            style={{
-              position: "relative",
-              width: "20%",
-              display: "inline-block",
-              textAlign: "center",
-            }}>
+          <FnLinks key={label} onClick={() => handleButtonClick(index, label)}>
             {label}
-          </div>
+          </FnLinks>
         ))}
-        <motion.div
-          className='background-block'
+        <BackgroundBlock
           initial={false}
           animate={{ x: backgroundX }}
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 250, damping: 25 }}
-          style={{
-            position: "absolute",
-            width: "19.5%",
-            height: "64%",
-            backgroundColor: "rgba(114, 114, 114, 0.2)",
-            borderRadius: "30px",
-          }}
         />
-      </div>
-    </div>
+      </FloatingNav>
+    </FloatingNavContainer>
   );
 };
 

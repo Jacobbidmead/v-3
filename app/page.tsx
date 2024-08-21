@@ -8,7 +8,7 @@ export default function Home() {
   const { isMobile, backgroundColor, scrollToSection } = useNavbarLogic();
   return (
     <main>
-      <Nav scrollToSection={scrollToSection} />
+      <Nav scrollToSection={scrollToSection} backgroundColor={backgroundColor} />
       <Hero />
     </main>
   );
