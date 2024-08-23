@@ -44,7 +44,7 @@ const Nav: React.FC<NavProps> = ({ scrollToSection }) => {
 
   return (
     <FloatingNavContainer>
-      <FloatingNav backgroundColor={navOpacity} border={navBorder}>
+      <FloatingNav navOpacity={navOpacity} border={navBorder}>
         {buttons.map((label, index) => (
           <FnLinks key={label} onClick={() => handleButtonClick(index, label)}>
             {label}

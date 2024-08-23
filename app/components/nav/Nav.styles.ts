@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 interface FloatingNavProps {
-  backgroundColor: string;
+  navOpacity: string;
   border: string;
 }
 
@@ -16,13 +16,15 @@ export const FloatingNavContainer = styled.div`
   align-items: center;
 `;
 
-export const FloatingNav = styled.div<FloatingNavProps>`
+export const FloatingNav = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== "navOpacity" && prop !== "border",
+})<FloatingNavProps>`
   display: flex;
   flex-direction: row;
   color: white;
   justify-content: space-between;
   padding: 9px 8px;
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${(props) => props.navOpacity};
   backdrop-filter: blur(20px);
   box-shadow: 0 2px 10px #0000001a;
   align-items: center;
