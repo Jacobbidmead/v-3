@@ -3,25 +3,24 @@ import { motion } from "framer-motion";
 
 export const HeroMain = styled.main`
   transition: background-color 1s ease-in-out;
-  padding-bottom: 100px;
   position: relative;
   z-index: 1;
   background-image: url("images/gradient.webp");
 `;
 
 export const HeroHeadContainer = styled.div`
- display: flex;
+  display: flex;
   flex-direction: column;
   place-items: center;
   height: 63%;
   justify-content: center;
   position: relative;
-  z-index: 1; /* Higher than the SVG */
-}
+  z-index: 1;
+  gap: 1rem;
 `;
 
 export const HeroContent = styled.div`
-  padding-top: 240px;
+  padding-top: 200px;
   font-size: 100px;
   color: rgb(45, 255, 167);
   text-shadow: 0 0 6px rgb(45, 255, 167);
