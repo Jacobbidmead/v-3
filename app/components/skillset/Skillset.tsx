@@ -30,7 +30,6 @@ const Skillset: React.FC = () => {
     <>
       <SkillsetContainer id='skillset'>
         <SkillsetHeader>Skillset</SkillsetHeader>
-
         <SkillContainer>
           {skills.map((skill, i) => (
             <Skill className='home-techs' key={i}>
