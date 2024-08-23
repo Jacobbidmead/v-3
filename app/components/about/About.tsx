@@ -1,41 +1,31 @@
 "use client";
 import { motion } from "framer-motion";
 import { AboutContainer, AboutTextContainer, AboutText } from "./About.styles";
-const isMobile = window.innerWidth < 601;
-const boxAnimate = isMobile
-  ? {
-      offscreen: { y: 0, opacity: 1 },
-      onscreen: { y: 0, opacity: 1 },
-    }
-  : {
-      offscreen: { y: 200, opacity: 0 },
-      onscreen: {
-        y: 0,
-        opacity: 1,
-        transition: {
-          type: "tween",
-          bounce: 0.5,
-          duration: 1,
-        },
-      },
-    };
+// const isMobile = window.innerWidth < 601;
+const boxAnimate = {
+  offscreen: { y: 200, opacity: 0 },
+  onscreen: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "tween",
+      bounce: 0.5,
+      duration: 1,
+    },
+  },
+};
 
-const textAnimate = isMobile
-  ? {
-      offscreen: { y: 0 },
-      onscreen: { y: 0 },
-    }
-  : {
-      offscreen: { y: 200 },
-      onscreen: {
-        y: 0,
-        transition: {
-          type: "tween",
-          bounce: 0.5,
-          duration: 1,
-        },
-      },
-    };
+const textAnimate = {
+  offscreen: { y: 200 },
+  onscreen: {
+    y: 0,
+    transition: {
+      type: "tween",
+      bounce: 0.5,
+      duration: 1,
+    },
+  },
+};
 
 const About: React.FC = () => {
   return (

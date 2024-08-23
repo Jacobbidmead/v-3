@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DarkerGrotesque } from "@/app/fonts";
 
 export const HeroMain = styled.div`
   padding-bottom: 100px;
@@ -10,9 +11,6 @@ export const HeroImage = styled.img`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
   z-index: 0;
 `;
 

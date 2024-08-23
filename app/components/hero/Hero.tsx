@@ -6,11 +6,12 @@ import {
   HeroContentLower,
   HeroImage,
 } from "./Hero.styles";
+import { DarkerGrotesque } from "@/app/fonts";
 
 const Hero: React.FC = () => {
   return (
     <>
-      <HeroMain>
+      <HeroMain className={DarkerGrotesque.className}>
         <HeroImage src='images/gradient.webp' alt='hero image' />
         <HeroHeadContainer>
           <HeroContent>Hi, Im Jacob</HeroContent>
