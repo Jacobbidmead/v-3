@@ -37,7 +37,7 @@ const About: React.FC = () => {
           variants={boxAnimate}
           viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
-            <p>
+            <p data-testid='about-description'>
               Im a creative Front End JavaScript developer with a passion for design and creating
               intuatuive UI. I build web applications with TypeScript, React & Next.js.
             </p>
@@ -50,7 +50,7 @@ const About: React.FC = () => {
           variants={boxAnimate}
           viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
-            <p>
+            <p data-testid='about-description'>
               Im a bootcamp graduate and for the most part self taught; I have learnt to utilise my
               problem-solving skills to create intuative and responsive web applications in a
               professional enviroment.
@@ -64,7 +64,7 @@ const About: React.FC = () => {
           variants={boxAnimate}
           viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
-            <p>
+            <p data-testid='about-description'>
               I have a creative background, studying print & time based media at UAL. A passionate
               photographer & explorer, I have documented my travels around the world over the last
               ten years.
