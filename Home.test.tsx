@@ -33,6 +33,8 @@ it("renders the home component with the correct background color and passed prop
 
   expect(screen.getByTestId("nav")).toBeInTheDocument();
 
+  expect(screen.getByTestId("hero")).toBeInTheDocument();
+
   expect(Nav).toHaveBeenCalledWith(
     expect.objectContaining({
       scrollToSection: expect.any(Function),
