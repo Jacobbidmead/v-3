@@ -1,22 +1,29 @@
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
-export const HeroMain = styled.main`
-  transition: background-color 1s ease-in-out;
+export const HeroMain = styled.div`
+  padding-bottom: 100px;
   position: relative;
   z-index: 1;
-  background-image: url("images/gradient.webp");
+`;
+
+export const HeroImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 `;
 
 export const HeroHeadContainer = styled.div`
   display: flex;
   flex-direction: column;
-  place-items: center;
+  align-items: center;
   height: 63%;
   justify-content: center;
   position: relative;
   z-index: 1;
-  gap: 1rem;
 `;
 
 export const HeroContent = styled.div`

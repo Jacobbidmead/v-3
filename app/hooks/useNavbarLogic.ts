@@ -31,7 +31,7 @@ const useNavbarLogic = (): NavBarLogicProps => {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 200) {
-        setBackgroundColor("rgb(12, 9, 16 )");
+        setBackgroundColor("rgb(12, 9, 16)");
       } else {
         setBackgroundColor("rgb(4, 4, 4)");
       }

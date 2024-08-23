@@ -1,17 +1,51 @@
 "use client";
 import { motion } from "framer-motion";
 import { AboutContainer, AboutTextContainer, AboutText } from "./About.styles";
+const isMobile = window.innerWidth < 601;
+const boxAnimate = isMobile
+  ? {
+      offscreen: { y: 0, opacity: 1 },
+      onscreen: { y: 0, opacity: 1 },
+    }
+  : {
+      offscreen: { y: 200, opacity: 0 },
+      onscreen: {
+        y: 0,
+        opacity: 1,
+        transition: {
+          type: "tween",
+          bounce: 0.5,
+          duration: 1,
+        },
+      },
+    };
+
+const textAnimate = isMobile
+  ? {
+      offscreen: { y: 0 },
+      onscreen: { y: 0 },
+    }
+  : {
+      offscreen: { y: 200 },
+      onscreen: {
+        y: 0,
+        transition: {
+          type: "tween",
+          bounce: 0.5,
+          duration: 1,
+        },
+      },
+    };
 
 const About: React.FC = () => {
   return (
     <>
       <AboutContainer id='about'>
         <AboutTextContainer
-        // initial={"offscreen"}
-        // whileInView={"onscreen"}
-        // variants={boxAnimate}
-        // viewport={{ once: true, amount: 0.1 }}
-        >
+          initial={"offscreen"}
+          whileInView={"onscreen"}
+          variants={boxAnimate}
+          viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
             <p>
               Im a creative Front End JavaScript developer with a passion for design and creating
@@ -20,7 +54,11 @@ const About: React.FC = () => {
           </AboutText>
         </AboutTextContainer>
 
-        <AboutTextContainer>
+        <AboutTextContainer
+          initial={"offscreen"}
+          whileInView={"onscreen"}
+          variants={boxAnimate}
+          viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
             <p>
               Im a bootcamp graduate and for the most part self taught; I have learnt to utilise my
@@ -30,7 +68,11 @@ const About: React.FC = () => {
           </AboutText>
         </AboutTextContainer>
 
-        <AboutTextContainer>
+        <AboutTextContainer
+          initial={"offscreen"}
+          whileInView={"onscreen"}
+          variants={boxAnimate}
+          viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
             <p>
               I have a creative background, studying print & time based media at UAL. A passionate

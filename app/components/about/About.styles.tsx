@@ -12,10 +12,10 @@ export const AboutContainer = styled.div`
 `;
 
 export const AboutTextContainer = styled(motion.div)`
-  font-family: Inter;
-  font-size: 16px;
+  font-size: 164x;
   color: white;
   text-align: center;
+  padding: 30px;
 `;
 
 export const AboutText = styled(motion.div)`

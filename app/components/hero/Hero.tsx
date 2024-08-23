@@ -1,13 +1,17 @@
-"use client";
-// TODO write some test for Hero
-
 import StarsSvg from "@/app/svg_components/Stars";
-import { HeroMain, HeroHeadContainer, HeroContent, HeroContentLower } from "./Hero.styles";
+import {
+  HeroMain,
+  HeroHeadContainer,
+  HeroContent,
+  HeroContentLower,
+  HeroImage,
+} from "./Hero.styles";
 
 const Hero: React.FC = () => {
   return (
     <>
       <HeroMain>
+        <HeroImage src='images/gradient.webp' alt='hero image' />
         <HeroHeadContainer>
           <HeroContent>Hi, Im Jacob</HeroContent>
           <HeroContentLower>I make things for the web.</HeroContentLower>
