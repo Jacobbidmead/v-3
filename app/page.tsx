@@ -5,6 +5,8 @@ import useNavbarLogic from "./hooks/useNavbarLogic";
 import Nav from "./components/nav/Nav";
 import About from "./components/about/About";
 import { HomeContainer } from "@/Home.styles";
+import Skillset from "./components/skillset/Skillset";
+
 export default function Home() {
   const { isMobile, backgroundColor, scrollToSection } = useNavbarLogic();
   return (
@@ -12,6 +14,7 @@ export default function Home() {
       <Nav scrollToSection={scrollToSection} />
       <Hero />
       <About />
+      <Skillset />
     </HomeContainer>
   );
 }
