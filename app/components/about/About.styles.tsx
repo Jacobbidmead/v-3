@@ -16,6 +16,10 @@ export const AboutContainer = styled.div`
    gap: 10px;
    padding: 1em;
   `}
+
+  ${media.tablet`
+  flex-direction: column;
+`}
 `;
 
 export const AboutTextContainer = styled(motion.div)`

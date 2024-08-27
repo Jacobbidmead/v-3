@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { media } from "@/app/utils/media";
 
 export const HeroMain = styled.div`
-  padding-bottom: 100px;
   position: relative;
   z-index: 1;
 
+  ${media.desktop`
+    padding-bottom: 100px;
+  `}
+
   ${media.mobile`
     padding-bottom: 40px;
-
   `}
 `;
 

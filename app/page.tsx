@@ -6,6 +6,7 @@ import Nav from "./components/nav/Nav";
 import About from "./components/about/About";
 import { HomeContainer } from "@/Home.styles";
 import Skillset from "./components/skillset/Skillset";
+import Projects from "./components/projects/Projects";
 
 export default function Home() {
   const { isMobile, backgroundColor, scrollToSection } = useNavbarLogic();
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <About />
       <Skillset />
+      <Projects />
     </HomeContainer>
   );
 }
