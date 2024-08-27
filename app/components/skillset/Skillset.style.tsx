@@ -23,7 +23,7 @@ export const SkillsetContainer = styled.section`
   padding: 30px;
 `;
 
-export const SkillContainer = styled.p`
+export const SkillContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

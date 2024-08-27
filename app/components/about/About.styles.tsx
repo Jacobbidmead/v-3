@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { media } from "@/app/utils/media";
 
 export const AboutContainer = styled.div`
   width: 100%;
@@ -9,6 +10,12 @@ export const AboutContainer = styled.div`
   flex-direction: row;
   gap: 24px;
   justify-content: space between;
+
+  ${media.mobile`
+   flex-direction: column;
+   gap: 10px;
+   padding: 1em;
+  `}
 `;
 
 export const AboutTextContainer = styled(motion.div)`

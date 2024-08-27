@@ -29,7 +29,6 @@ const skills: string[] = [
 test("renders each skill correctly", () => {
   render(<Skillset />);
 
-  // Verify that each skill is rendered
   skills.forEach((skill) => {
     expect(screen.getByText(skill)).toBeInTheDocument();
   });
