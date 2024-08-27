@@ -1,7 +1,7 @@
 "use client";
 import GitSvg from "@/app/svg_components/Git";
 import LinkSvg from "@/app/svg_components/Link";
-import { ProjectCard } from "./ProjectsCard.styles";
+import { ProjectCard, Technologies, Tech, ProjectLinks, LinkIcon } from "./ProjectsCard.styles";
 
 interface ProjectDataTypes {
   projectTitle: string;
@@ -48,21 +48,21 @@ const ProjectsCard: React.FC = () => {
       {ProjectData.map((proj) => (
         <ProjectCard key={proj.projectID}>
           <div>{proj.projectTitle}</div>
-          <p className='technologies'>
+          <Technologies>
             {proj.projectTech.map((tech) => (
-              <span key={proj.projectID} className='project-techs'>
+              <Tech key={proj.projectID} className='project-techs'>
                 {tech}
-              </span>
+              </Tech>
             ))}
-          </p>
-          <div className='project-link'>
-            <a href={proj.projectLink} target='_blank' rel='noreferrer' className='link'>
+          </Technologies>
+          <ProjectLinks>
+            <LinkIcon href={proj.projectLink} target='_blank' rel='noreferrer'>
               <LinkSvg />
-            </a>
-            <a href={proj.projectRepo} target='_blank' rel='noreferrer' className='link'>
+            </LinkIcon>
+            <LinkIcon href={proj.projectRepo} target='_blank' rel='noreferrer'>
               <GitSvg />
-            </a>
-          </div>
+            </LinkIcon>
+          </ProjectLinks>
         </ProjectCard>
       ))}
     </>

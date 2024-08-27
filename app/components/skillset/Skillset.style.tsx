@@ -18,7 +18,7 @@ export const SkillsetContainer = styled.section`
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   background-color: rgba(64, 63, 63, 0.033);
   border-radius: 10px;
   padding: 30px;

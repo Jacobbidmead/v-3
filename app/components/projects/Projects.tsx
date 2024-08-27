@@ -6,7 +6,7 @@ import { ProjectsContainer } from "./Projects.styles";
 const Projects: React.FC = () => {
   return (
     <>
-      <ProjectsContainer>
+      <ProjectsContainer id='projects'>
         <ProjectsCard />
       </ProjectsContainer>
     </>
