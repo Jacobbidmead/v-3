@@ -1,13 +1,14 @@
 "use client";
 
-import GitSvg from "@/app/svg_components/Git";
-import LinkSvg from "@/app/svg_components/Link";
 import ProjectsCard from "./ProjectCard";
+import { ProjectsContainer } from "./Projects.styles";
 
 const Projects: React.FC = () => {
   return (
     <>
-      <ProjectsCard />
+      <ProjectsContainer>
+        <ProjectsCard />
+      </ProjectsContainer>
     </>
   );
 };

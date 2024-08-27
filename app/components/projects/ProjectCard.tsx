@@ -1,6 +1,7 @@
 "use client";
 import GitSvg from "@/app/svg_components/Git";
 import LinkSvg from "@/app/svg_components/Link";
+import { ProjectCard } from "./ProjectsCard.styles";
 
 interface ProjectDataTypes {
   projectTitle: string;
@@ -44,28 +45,26 @@ const ProjectData: ProjectDataTypes[] = [
 const ProjectsCard: React.FC = () => {
   return (
     <>
-      <div className='project-box'>
-        {ProjectData.map((proj) => (
-          <section key={proj.projectID}>
-            <div>{proj.projectTitle}</div>
-            <p className='technologies'>
-              {proj.projectTech.map((tech) => (
-                <span key={proj.projectID} className='project-techs'>
-                  {tech}
-                </span>
-              ))}
-            </p>
-            <div className='project-link'>
-              <a href={proj.projectLink} target='_blank' rel='noreferrer' className='link'>
-                <LinkSvg />
-              </a>
-              <a href={proj.projectRepo} target='_blank' rel='noreferrer' className='link'>
-                <GitSvg />
-              </a>
-            </div>
-          </section>
-        ))}
-      </div>
+      {ProjectData.map((proj) => (
+        <ProjectCard key={proj.projectID}>
+          <div>{proj.projectTitle}</div>
+          <p className='technologies'>
+            {proj.projectTech.map((tech) => (
+              <span key={proj.projectID} className='project-techs'>
+                {tech}
+              </span>
+            ))}
+          </p>
+          <div className='project-link'>
+            <a href={proj.projectLink} target='_blank' rel='noreferrer' className='link'>
+              <LinkSvg />
+            </a>
+            <a href={proj.projectRepo} target='_blank' rel='noreferrer' className='link'>
+              <GitSvg />
+            </a>
+          </div>
+        </ProjectCard>
+      ))}
     </>
   );
 };
