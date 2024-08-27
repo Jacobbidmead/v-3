@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "@/app/utils/media";
 
 export const SkillsetHeader = styled.h4`
   color: rgb(198, 198, 198);
@@ -28,6 +29,11 @@ export const SkillContainer = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   padding: 0px 60px;
+
+  ${media.mobile`
+  padding: 2px;
+
+  `}
 `;
 
 export const Skill = styled.div`
@@ -39,4 +45,8 @@ export const Skill = styled.div`
   font-size: 13px;
   gap: 12px;
   margin: 2px;
+
+  ${media.mobile`
+  font-size:11px;
+`}
 `;
