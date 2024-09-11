@@ -15,7 +15,7 @@ const Nav: React.FC<NavProps> = ({ scrollToSection }) => {
   const router = useRouter();
 
   const backgroundX = activeButtonIndex !== null ? `${activeButtonIndex * 100}%` : "0%";
-  const buttons = ["About", "Skillset", "Projects", "Contact", "Photo"];
+  const buttons = ["About", "Skillset", "Projects", "Experience", "Photo"];
 
   useEffect(() => {
     const handleScroll = () => {

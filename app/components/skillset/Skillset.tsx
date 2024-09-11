@@ -18,11 +18,16 @@ const skills: string[] = [
   "Postgres",
   "REST",
   "GraphQL",
+  "Headless CMS",
   "HyGraph",
+  "Sanity.io",
   "Jest",
   "NPM",
   "Framer Motion",
   "Postman",
+  "MUI",
+  "shadCN",
+  "antd",
 ];
 
 const Skillset: React.FC = () => {
