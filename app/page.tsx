@@ -7,6 +7,7 @@ import About from "./components/about/About";
 import { HomeContainer } from "@/Home.styles";
 import Skillset from "./components/skillset/Skillset";
 import Projects from "./components/projects/Projects";
+import ExperienceSection from "./components/experience-section";
 
 export default function Home() {
   const { isMobile, backgroundColor, scrollToSection } = useNavbarLogic();
@@ -17,6 +18,7 @@ export default function Home() {
       <About />
       <Skillset />
       <Projects />
+      <ExperienceSection />
     </HomeContainer>
   );
 }
