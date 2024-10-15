@@ -39,13 +39,13 @@ export const FloatingNav = styled.div.withConfig({
 export const FnLinks = styled.div`
   cursor: pointer;
   transition: all 0.2s ease;
-  font-size: 17px;
+  font-size: 16px;
   z-index: 2;
-  margin: 0 5px;
+  margin: 4px;
   border-radius: 30px;
   color: rgb(198, 198, 198);
   position: relative;
-  width: 20%;
+  width: 22%;
   display: inline-block;
   text-align: center;
 
@@ -57,8 +57,9 @@ export const FnLinks = styled.div`
 export const BackgroundBlock = styled(motion.div)`
   position: absolute;
   z-index: 1;
-  width: 19.5%;
+  width: 19.4%;
   height: 64%;
   background-color: rgba(114, 114, 114, 0.2);
   border-radius: 30px;
+  top: 20%;
 `;
