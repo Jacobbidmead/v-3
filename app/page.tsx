@@ -18,7 +18,7 @@ export default function Home() {
       <About />
       <Skillset />
       <Projects />
-      <Experience />
+      <Experience experience={[]} />
     </HomeContainer>
   );
 }

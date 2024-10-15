@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { media } from "@/app/utils/media";
+import { motion } from "framer-motion";
 
 export const ExperienceHeader = styled.h4`
   color: white;
@@ -34,4 +35,18 @@ export const ExperienceSection = styled.div`
   ${media.mobile`
   font-size:11px;
 `}
+`;
+
+export const ExperienceTextContainer = styled(motion.div)`
+  font-size: 164x;
+  color: white;
+  text-align: center;
+  padding: 30px;
+`;
+
+export const ExperienceText = styled(motion.div)`
+  padding: 2rem;
+  border-radius: 10px;
+  border-radius: 10px;
+  background-color: rgba(64, 63, 63, 0.033);
 `;
