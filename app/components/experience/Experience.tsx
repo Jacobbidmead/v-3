@@ -19,6 +19,18 @@ const experience = [
     description: `description`,
     technologies: ["TypeScript", "Next.js", "Node", "Styled Components", "Git", "Sanity.io", "NPM"],
   },
+  {
+    company: `Ignite Hubs`,
+    dates: `August 2024 - Current`,
+    description: `description`,
+    technologies: ["TypeScript", "Next.js", "Node", "Styled Components", "Git", "Sanity.io", "NPM"],
+  },
+  {
+    company: `Curated Loop`,
+    dates: `August 2024 - Current`,
+    description: `description`,
+    technologies: ["TypeScript", "Next.js", "Node", "Styled Components", "Git", "Sanity.io", "NPM"],
+  },
 ];
 
 const Experience: React.FC<ExperienceProps> = () => {

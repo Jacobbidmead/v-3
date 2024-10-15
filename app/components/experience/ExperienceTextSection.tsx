@@ -1,6 +1,12 @@
 "use client";
 
-import { ExperienceText, ExperienceTextContainer } from "./Experience.style";
+import {
+  ExperienceParagraph,
+  ExperienceText,
+  ExperienceTextContainer,
+  ExperienceHeader,
+  Tech,
+} from "./Experience.style";
 
 interface Experience {
   company: string;
@@ -15,7 +21,19 @@ const ExperienceTextSection: React.FC<ExperienceProps> = ({ experience }) => {
   return (
     <>
       <ExperienceTextContainer>
-        <ExperienceText></ExperienceText>
+        {experience.map((job) => (
+          <>
+            <ExperienceText>
+              {job.company}
+              <ExperienceParagraph>{job.dates}</ExperienceParagraph>
+              <ExperienceParagraph>{job.description}</ExperienceParagraph>
+
+              {job.technologies.map((tech, index) => (
+                <Tech key={index}>{tech}</Tech>
+              ))}
+            </ExperienceText>
+          </>
+        ))}
       </ExperienceTextContainer>
     </>
   );
