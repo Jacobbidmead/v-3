@@ -4,14 +4,14 @@ import {
   ExperienceParagraph,
   ExperienceText,
   ExperienceTextContainer,
-  ExperienceHeader,
+  TechContainer,
   Tech,
 } from "./Experience.style";
 
 interface Experience {
   company: string;
   dates: string;
-  description: string;
+  description: string[];
   technologies: string[];
 }
 interface ExperienceProps {
@@ -25,12 +25,17 @@ const ExperienceTextSection: React.FC<ExperienceProps> = ({ experience }) => {
           <>
             <ExperienceText>
               {job.company}
-              <ExperienceParagraph>{job.dates}</ExperienceParagraph>
-              <ExperienceParagraph>{job.description}</ExperienceParagraph>
 
-              {job.technologies.map((tech, index) => (
-                <Tech key={index}>{tech}</Tech>
+              <ExperienceText>{job.dates}</ExperienceText>
+
+              {job.description.map((des, i) => (
+                <ExperienceParagraph key={i}>{des}</ExperienceParagraph>
               ))}
+              <TechContainer>
+                {job.technologies.map((tech, index) => (
+                  <Tech key={index}>{tech}</Tech>
+                ))}
+              </TechContainer>
             </ExperienceText>
           </>
         ))}
