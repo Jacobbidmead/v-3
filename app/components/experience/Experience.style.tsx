@@ -20,7 +20,7 @@ export const ExperienceContainer = styled.section`
   width: 100%;
   justify-content: center;
   margin-bottom: 30px;
-  background-color: rgba(64, 63, 63, 0.033);
+
   border-radius: 10px;
   padding: 2em;
 
@@ -69,7 +69,7 @@ export const ExperienceTextContainer = styled.div`
 export const ExperienceText = styled(motion.div)`
   border-radius: 10px;
   border-radius: 10px;
-  background-color: rgba(64, 63, 63, 0.033);
+
   padding: 2px 0px;
 `;
 export const ExperienceParagraph = styled.p`
