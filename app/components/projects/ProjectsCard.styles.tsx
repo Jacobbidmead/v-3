@@ -13,11 +13,27 @@ export const ProjectCard = styled.div`
   background-color: rgba(64, 63, 63, 0.033);
   cursor: pointer;
   gap: 14px;
+  ${media.mobile`
+    padding:40px;
+`}
+`;
+
+export const ProjectTitle = styled.div`
+  color: white;
+  font-size: 16px;
+
+  ${media.mobile`
+    font-size: 12px;
+`}
 `;
 
 export const Technologies = styled.div`
   padding-top: 10px;
   font-size: 12px;
+  ${media.mobile`
+    padding-top: 4px;
+  font-size: 6px;
+`}
 `;
 
 export const Tech = styled.span`

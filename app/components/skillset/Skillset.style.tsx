@@ -14,14 +14,15 @@ export const SkillsetContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
+
+  margin: 30px 32px;
   background-color: rgba(64, 63, 63, 0.033);
   border-radius: 10px;
   padding: 30px;
+
+  ${media.mobile`
+margin:10px 12px;
+  `}
 `;
 
 export const SkillContainer = styled.div`
@@ -32,7 +33,6 @@ export const SkillContainer = styled.div`
 
   ${media.mobile`
   padding: 2px;
-
   `}
 `;
 
@@ -47,6 +47,7 @@ export const Skill = styled.div`
   margin: 2px;
 
   ${media.mobile`
-  font-size:11px;
+  font-size:8px;
+  padding:2px;
 `}
 `;

@@ -14,7 +14,7 @@ export const AboutContainer = styled.div`
   ${media.mobile`
    flex-direction: column;
    gap: 10px;
-   padding: 1em;
+   padding: 12px;
   `}
 
   ${media.tablet`
@@ -23,10 +23,15 @@ export const AboutContainer = styled.div`
 `;
 
 export const AboutTextContainer = styled(motion.div)`
-  font-size: 164x;
+  font-size: 16px;
   color: white;
   text-align: center;
   padding: 30px;
+
+  ${media.mobile`
+    font-size: 12px;
+   padding: 12px;
+  `}
 `;
 
 export const AboutText = styled(motion.div)`

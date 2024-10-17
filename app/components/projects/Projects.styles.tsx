@@ -6,4 +6,9 @@ export const ProjectsContainer = styled.section`
   grid-template-columns: 1fr 1fr;
   padding: 32px;
   gap: 2rem;
+
+  ${media.mobile`
+    grid-template-columns:  1fr;
+    padding: 18px;
+`}
 `;

@@ -7,7 +7,11 @@ export const ExperienceHeader = styled.h4`
   font-size: 18px;
   display: flex;
   justify-content: center;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
+  ${media.mobile`
+ font-size:14px;
+
+`}
 `;
 
 export const ExperienceContainer = styled.section`
@@ -19,19 +23,24 @@ export const ExperienceContainer = styled.section`
   background-color: rgba(64, 63, 63, 0.033);
   border-radius: 10px;
   padding: 2em;
+
+  ${media.mobile`
+  padding: 18px;
+  
+`}
 `;
 
 export const ExperienceSection = styled.div`
   color: white;
   background-color: rgba(64, 63, 63, 0.033);
-
   border-radius: 10px;
   font-size: 13px;
   padding: 40px 20px;
   margin: 2px;
 
   ${media.mobile`
-  font-size:11px;
+  font-size: 10px;
+  padding: 0;
 `}
 `;
 
@@ -49,6 +58,7 @@ export const ExperienceTextContainer = styled.div`
    flex-direction: column;
    gap: 10px;
    padding: 1em;
+   margin: 0;
   `}
 
   ${media.tablet`
@@ -75,8 +85,12 @@ export const TechContainer = styled.div`
 export const Tech = styled.span`
   color: rgb(45, 255, 167);
   border: 1px solid;
-  padding: 6px;
+  padding: 2px;
   border-radius: 1px;
   margin: 4px;
   font-size: 10px;
+  ${media.mobile`
+  font-size:5px;
+  margin: 2px;
+`}
 `;
