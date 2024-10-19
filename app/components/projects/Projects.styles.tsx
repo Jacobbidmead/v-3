@@ -6,6 +6,7 @@ export const ProjectsContainer = styled.section`
   grid-template-columns: 1fr 1fr;
   padding: 32px;
   gap: 2rem;
+  margin: 0px 90px;
 
   ${media.mobile`
     grid-template-columns:  1fr;

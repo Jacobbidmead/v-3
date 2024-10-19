@@ -85,7 +85,7 @@ export const TechContainer = styled.div`
 export const Tech = styled.span`
   color: rgb(45, 255, 167);
   border: 1px solid;
-  padding: 2px;
+  padding: 4px;
   border-radius: 1px;
   margin: 4px;
   font-size: 10px;

@@ -8,17 +8,19 @@ import { HomeContainer } from "@/Home.styles";
 import Skillset from "./components/skillset/Skillset";
 import Projects from "./components/projects/Projects";
 import Experience from "./components/experience/Experience";
+import useBackgroundColorScroll from "./hooks/useBackgroundColorScroll";
 
 export default function Home() {
-  const { isMobile, backgroundColor, scrollToSection } = useNavbarLogic();
+  const { scrollToSection } = useNavbarLogic();
+  const { backgroundColor } = useBackgroundColorScroll();
   return (
-    <HomeContainer bgColor={backgroundColor}>
+    <HomeContainer backgroundColor={backgroundColor}>
       <Nav scrollToSection={scrollToSection} />
       <Hero />
       <About />
       <Skillset />
-      <Projects />
       <Experience experience={[]} />
+      <Projects />
     </HomeContainer>
   );
 }

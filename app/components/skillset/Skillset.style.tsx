@@ -15,13 +15,13 @@ export const SkillsetContainer = styled.section`
   justify-content: center;
   flex-direction: column;
 
-  margin: 30px 32px;
+  margin: 0px 90px;
   background-color: rgba(64, 63, 63, 0.033);
   border-radius: 10px;
   padding: 30px;
 
   ${media.mobile`
-margin:10px 12px;
+margin:10px;
   `}
 `;
 

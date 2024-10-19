@@ -1,16 +1,15 @@
 import { useState, useEffect } from "react";
 
-interface NavBarLogicProps {
+interface backgroundScrollProps {
   backgroundColor: string;
   isMobile: boolean;
-  scrollToSection: (sectionId: string) => void;
 }
 
-const useNavbarLogic = (): NavBarLogicProps => {
+const useBackgroundColorScroll = (): backgroundScrollProps => {
   const [isMobile, setIsMobile] = useState<boolean>(
     typeof window !== "undefined" && window.innerWidth < 601
   );
-  const [backgroundColor, setBackgroundColor] = useState<string>("rgb(12, 9, 16)");
+  const [backgroundColor, setBackgroundColor] = useState<string>("rgb(4, 4, 4)");
 
   const checkMobile = () => {
     if (typeof window !== "undefined") {
@@ -46,14 +45,7 @@ const useNavbarLogic = (): NavBarLogicProps => {
     }
   }, []);
 
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "center" });
-    }
-  };
-
-  return { isMobile, backgroundColor, scrollToSection };
+  return { isMobile, backgroundColor };
 };
 
-export default useNavbarLogic;
+export default useBackgroundColorScroll;

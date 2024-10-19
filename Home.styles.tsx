@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 interface HomeContainerProps {
-  bgColor: string;
+  backgroundColor: string;
 }
 
 export const HomeContainer = styled.main<HomeContainerProps>`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${(props) => props.backgroundColor};
   display: flex;
   flex-direction: column;
 `;

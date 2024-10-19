@@ -1,3 +1,5 @@
+"use client";
+
 import StarsSvg from "@/app/svg_components/Stars";
 import {
   HeroMain,
