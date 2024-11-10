@@ -1,22 +1,55 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./button";
 
 // Updated to include 8 images
 const images = [
-  { id: 1, src: "/placeholder.svg?height=600&width=800", alt: "Image 1" },
-  { id: 2, src: "/placeholder.svg?height=600&width=800", alt: "Image 2" },
-  { id: 3, src: "/placeholder.svg?height=600&width=800", alt: "Image 3" },
-  { id: 4, src: "/placeholder.svg?height=600&width=800", alt: "Image 4" },
-  { id: 5, src: "/placeholder.svg?height=600&width=800", alt: "Image 5" },
-  { id: 6, src: "/placeholder.svg?height=600&width=800", alt: "Image 6" },
-  { id: 7, src: "/placeholder.svg?height=600&width=800", alt: "Image 7" },
-  { id: 8, src: "/placeholder.svg?height=600&width=800", alt: "Image 8" },
+  { id: 1, src: "", alt: "Image 1" },
+  { id: 2, src: "", alt: "Image 2" },
+  { id: 3, src: "", alt: "Image 3" },
+  { id: 4, src: "", alt: "Image 4" },
+  { id: 5, src: "", alt: "Image 5" },
+  { id: 6, src: "", alt: "Image 6" },
+  { id: 7, src: "", alt: "Image 7" },
+  { id: 8, src: "", alt: "Image 8" },
 ];
+interface Portfolio {
+  id: string;
+  title: string;
+  description: string;
+  image: {
+    url: string; // Ensure this matches the structure from the API
+    alt: string; // Include alt if it's available in the data
+  };
+}
 
 export function ImageGallery() {
   const [selectedImage, setSelectedImage] = useState(images[0]);
+  const [assetData, setAssetData] = useState<Portfolio[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  useEffect(() => {
+    const fetchPortfolioData = async () => {
+      try {
+        const response = await fetch("/api/portfolio");
+        const data = await response.json();
+
+        if (data.portfolios && data.portfolios.length > 0) {
+          setAssetData(data.portfolios);
+          console.log(assetData);
+          setSelectedImage(data.portfolios[0]); // Select the first image as default
+        }
+      } catch (error) {
+        console.error("Failed to fetch portfolio data:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchPortfolioData();
+  }, []);
 
   const selectImage = (image: any) => {
     setSelectedImage(image);

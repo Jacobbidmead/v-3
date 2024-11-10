@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { media } from "@/app/utils/media";
 
 interface FloatingNavProps {
   navOpacity: string;
@@ -14,6 +15,10 @@ export const FloatingNavContainer = styled.div`
   z-index: 3;
   padding-top: 40px;
   align-items: center;
+
+  ${media.mobileLarge`
+   display: none;
+  `}
 `;
 
 export const FloatingNav = styled.div.withConfig({
@@ -34,6 +39,19 @@ export const FloatingNav = styled.div.withConfig({
   height: 4rem;
   border: ${(props) => props.border};
   position: relative;
+
+  ${media.desktop`
+   width: 65%;
+  `}
+  ${media.tablet`
+   width: 70%;
+  `}
+  ${media.mobileLarge`
+   display: none;
+  `}
+  ${media.mobile`
+   display: none;
+  `}
 `;
 
 export const FnLinks = styled.div`

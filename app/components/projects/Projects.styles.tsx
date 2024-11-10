@@ -6,10 +6,17 @@ export const ProjectsContainer = styled.section`
   grid-template-columns: 1fr 1fr;
   padding: 32px;
   gap: 2rem;
-  margin: 0px 90px;
 
   ${media.mobile`
     grid-template-columns:  1fr;
-    padding: 18px;
+    padding: 12px;
+`}
+  ${media.mobileLarge`
+    grid-template-columns:  1fr;
+    
+`}
+  ${media.tablet`
+    grid-template-columns:  1fr;
+
 `}
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "@/app/utils/media";
 
 interface HomeContainerProps {
   backgroundColor: string;

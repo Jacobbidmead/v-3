@@ -39,7 +39,21 @@ export const HeroContent = styled.div`
 
   ${media.mobile`
     font-size: 3em;
-    padding-top: 150px;
+    padding-top: 50px;
+  `}
+
+  ${media.mobileLarge`
+    font-size: 3em;
+    padding-top: 80px;
+  `}
+
+  ${media.tablet`
+    font-size: 3em;
+    padding-top: 140px;
+  `}
+  ${media.desktop`
+    font-size: 100px;
+    padding-top: 200px;
   `}
 `;
 
@@ -50,5 +64,8 @@ export const HeroContentLower = styled.div`
 
   ${media.mobile`
     font-size: 1em;
+  `}
+  ${media.mobileLarge`
+    font-size: 2em;
   `}
 `;
