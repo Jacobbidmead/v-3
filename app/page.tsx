@@ -54,11 +54,12 @@ export default function Home() {
   if (!landingPageData || landingPageData.length === 0) return <div>No data found</div>;
 
   const data = landingPageData[0];
-  console.log(data); // Assuming single landing page
+  const { heading, subtitle, aboutCenter, aboutRight, aboutLeft } = data;
+  console.log(data);
   return (
     <HomeContainer backgroundColor={backgroundColor}>
       <Nav scrollToSection={scrollToSection} />
-      <Hero />
+      <Hero heading={heading} subtitle={subtitle} />
       <About />
       <Skillset />
       <Experience experience={[]} />
