@@ -7,7 +7,7 @@ const skills: string[] = [
   "Next.js",
   "Vue",
   "Nuxt",
-  "Node",
+  "Node.js",
   "CSS",
   "Tailwind",
   "Styled Components",
@@ -28,6 +28,7 @@ const skills: string[] = [
   "MUI",
   "shadCN",
   "antd",
+  "Turborepo",
 ];
 
 const Skillset: React.FC = () => {

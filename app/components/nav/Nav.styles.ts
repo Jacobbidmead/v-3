@@ -41,7 +41,7 @@ export const FloatingNav = styled.div.withConfig({
   position: relative;
 
   ${media.desktop`
-   width: 65%;
+   width: 50%;
   `}
   ${media.tablet`
    width: 70%;
