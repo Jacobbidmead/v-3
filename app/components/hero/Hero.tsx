@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({ heading, subtitle }) => {
         <HeroImage src='images/gradient.webp' alt='hero image' />
         <HeroHeadContainer>
           <HeroContent>{heading}</HeroContent>
-          <HeroContentLower>I make things for the web.</HeroContentLower>
+          <HeroContentLower>{subtitle}</HeroContentLower>
         </HeroHeadContainer>
         <StarsSvg />
       </HeroMain>

@@ -60,7 +60,7 @@ export default function Home() {
     <HomeContainer backgroundColor={backgroundColor}>
       <Nav scrollToSection={scrollToSection} />
       <Hero heading={heading} subtitle={subtitle} />
-      <About />
+      <About leftText={aboutLeft} centerText={aboutCenter} rightText={aboutRight} />
       <Skillset />
       <Experience experience={[]} />
       <Projects />

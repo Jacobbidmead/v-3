@@ -1,5 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
+import { PortableText } from "@portabletext/react";
+import type { PortableTextBlock } from "@sanity/types";
 import { AboutContainer, AboutTextContainer, AboutText } from "./About.styles";
 // const isMobile = window.innerWidth < 601;
 const boxAnimate = {
@@ -27,7 +28,13 @@ const textAnimate = {
   },
 };
 
-const About: React.FC = () => {
+interface AboutProps {
+  leftText: PortableTextBlock[];
+  centerText: PortableTextBlock[];
+  rightText: PortableTextBlock[];
+}
+
+const About: React.FC<AboutProps> = ({ leftText, rightText, centerText }) => {
   return (
     <>
       <AboutContainer id='about'>
@@ -38,8 +45,7 @@ const About: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
             <p data-testid='about-description'>
-              Im a creative Front End JavaScript developer with a passion for design and creating
-              intuatuive UI. I build web applications with TypeScript, React & Next.js.
+              <PortableText value={leftText} />
             </p>
           </AboutText>
         </AboutTextContainer>
@@ -51,9 +57,7 @@ const About: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
             <p data-testid='about-description'>
-              Im a bootcamp graduate and for the most part self taught; I have learnt to utilise my
-              problem-solving skills to create intuative and responsive web applications in a
-              professional enviroment.
+              <PortableText value={centerText} />
             </p>
           </AboutText>
         </AboutTextContainer>
@@ -65,9 +69,7 @@ const About: React.FC = () => {
           viewport={{ once: true, amount: 0.1 }}>
           <AboutText>
             <p data-testid='about-description'>
-              I have a creative background, studying print & time based media at UAL. A passionate
-              photographer & explorer, I have documented my travels around the world over the last
-              ten years.
+              <PortableText value={rightText} />
             </p>
           </AboutText>
         </AboutTextContainer>
