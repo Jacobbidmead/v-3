@@ -1,12 +1,14 @@
 import { NextResponse } from "next/server";
 import client from "@/lib/sanity";
 
-interface photoPageData {
-  heading: string;
-  subtitle: string;
-  aboutLeft: any[];
-  aboutCenter: any[];
-  aboutRight: any[];
+interface Photo {
+  category: string;
+  imageUrl: string;
+}
+
+interface PhotoPageData {
+  title: string;
+  photos: Photo[];
 }
 
 export async function GET() {
@@ -20,7 +22,7 @@ export async function GET() {
           }
      }`;
 
-    const photoPageData: photoPageData[] = await client.fetch(query);
+    const photoPageData: PhotoPageData[] = await client.fetch(query);
 
     return NextResponse.json(photoPageData, { status: 200 });
   } catch (error) {
