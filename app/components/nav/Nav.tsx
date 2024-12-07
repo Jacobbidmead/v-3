@@ -35,7 +35,7 @@ const Nav: React.FC<NavProps> = ({ scrollToSection }) => {
 
   const handleButtonClick = (index: number, label: string) => {
     if (label === "Photo") {
-      router.push("/Photo");
+      router.push("/photography_page");
     } else {
       setActiveButtonIndex(index);
       scrollToSection(label.toLowerCase());
