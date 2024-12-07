@@ -33,22 +33,6 @@ export function ImageGallery({ photos, title }: ImageGalleryProps) {
   };
 
   // ======================================
-  // image navigation
-  // ======================================
-
-  const navigateImage = (direction: number) => {
-    if (allImages.length === 0 || !selectedImage) return;
-
-    const currentIndex = allImages.findIndex((img) => img === selectedImage);
-    const newIndex = (currentIndex + direction + allImages.length) % allImages.length;
-    setSelectedImage(allImages[newIndex]);
-  };
-
-  if (allImages.length === 0) {
-    return <p>No images available</p>;
-  }
-
-  // ======================================
   // filter category
   // ======================================
   const filterImagesByCategory = (category: string) => {
@@ -57,47 +41,45 @@ export function ImageGallery({ photos, title }: ImageGalleryProps) {
     setSelectedImage(firstImage);
   };
 
+  console.log(photos);
+
   return (
-    <div className='container mx-auto p-4 '>
-      <h1 className='text-2xl font-bold mb-4 text-white'>{title}</h1>
-      {categories.map((category, index) => (
-        <button
-          className='text-2xl font-bold mb-4 text-white px-2'
-          key={index}
-          onClick={() => filterImagesByCategory(category)}>
-          {category}
-        </button>
-      ))}
+    <div className='container mx-auto my-auto p-4 min-h-full '>
+      <div className='flex lg:justify-between'>
+        <h1 className='text-2xl font-bold mb-16 text-white'>{title}</h1>
+        <div>
+          {categories.map((category, index) => (
+            <button
+              className='text-2xl font-bold mb-4 text-white px-2 flex xs:flex-col'
+              key={index}
+              onClick={() => filterImagesByCategory(category)}>
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
 
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
         {/* Main Image Viewer */}
-        <div className='md:col-span-2'>
-          <div className='relative aspect-[4/3] bg-muted'>
+        <div className='md:col-span-2 h-full'>
+          <div className='relative bg-muted'>
             {selectedImage ? (
-              <Image src={selectedImage} alt='Selected Image' fill className='object-contain' />
+              <Image
+                src={selectedImage}
+                alt='Selected Image'
+                width={3000}
+                height={1800}
+                className='object-contain '
+              />
             ) : (
               <p>Loading image...</p>
             )}
-            <Button
-              variant='ghost'
-              className='absolute left-2 top-1/2 -translate-y-1/2'
-              onClick={() => navigateImage(-1)}>
-              <ChevronLeft className='h-8 w-8' />
-              <span className='sr-only'>Previous image</span>
-            </Button>
-            <Button
-              variant='ghost'
-              className='absolute right-2 top-1/2 -translate-y-1/2'
-              onClick={() => navigateImage(1)}>
-              <ChevronRight className='h-8 w-8' />
-              <span className='sr-only'>Next image</span>
-            </Button>
           </div>
         </div>
 
         {/* Thumbnails */}
         <div className='md:col-span-1'>
-          <div className='grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-2'>
+          <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2'>
             {filteredImages.map((photo, index) => (
               <button
                 key={index}
@@ -110,8 +92,8 @@ export function ImageGallery({ photos, title }: ImageGalleryProps) {
                 <Image
                   src={photo.imageUrl}
                   alt={`Thumbnail ${index + 1}`}
-                  width={150}
-                  height={150}
+                  width={550}
+                  height={250}
                   className='rounded-lg object-cover w-full h-full'
                 />
               </button>
