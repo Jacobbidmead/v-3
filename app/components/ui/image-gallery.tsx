@@ -15,18 +15,26 @@ interface Photo {
   imageUrl: string;
 }
 
-export function ImageGallery({ photos }: ImageGalleryProps) {
-  // Extract all image URLs from the photos array
+export function ImageGallery({ photos, title }: ImageGalleryProps) {
   const allImages = photos.map((photo) => photo.imageUrl);
-
-  // Set the initial selected image to the first image in the array, or fallback to null
+  const categories = Array.from(new Set(photos.map((photo) => photo.category)));
   const [selectedImage, setSelectedImage] = useState<string | null>(
     allImages.length > 0 ? allImages[0] : null
   );
+  const [filteredCategory, setFilteredCategory] = useState<string>(categories[0] || "");
+  const filteredImages = photos.filter((photo) => photo.category === filteredCategory);
+
+  // ======================================
+  // select thumbnail
+  // ======================================
 
   const selectImage = (imageUrl: string) => {
     setSelectedImage(imageUrl);
   };
+
+  // ======================================
+  // image navigation
+  // ======================================
 
   const navigateImage = (direction: number) => {
     if (allImages.length === 0 || !selectedImage) return;
@@ -40,9 +48,27 @@ export function ImageGallery({ photos }: ImageGalleryProps) {
     return <p>No images available</p>;
   }
 
+  // ======================================
+  // filter category
+  // ======================================
+  const filterImagesByCategory = (category: string) => {
+    setFilteredCategory(category);
+    const firstImage = photos.find((photo) => photo.category === category)?.imageUrl || null;
+    setSelectedImage(firstImage);
+  };
+
   return (
-    <div className='container mx-auto p-4'>
-      <h1 className='text-2xl font-bold mb-4'>Image Gallery</h1>
+    <div className='container mx-auto p-4 '>
+      <h1 className='text-2xl font-bold mb-4 text-white'>{title}</h1>
+      {categories.map((category, index) => (
+        <button
+          className='text-2xl font-bold mb-4 text-white px-2'
+          key={index}
+          onClick={() => filterImagesByCategory(category)}>
+          {category}
+        </button>
+      ))}
+
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
         {/* Main Image Viewer */}
         <div className='md:col-span-2'>
@@ -72,7 +98,7 @@ export function ImageGallery({ photos }: ImageGalleryProps) {
         {/* Thumbnails */}
         <div className='md:col-span-1'>
           <div className='grid grid-cols-4 md:grid-cols-2 lg:grid-cols-4 gap-2'>
-            {photos.map((photo, index) => (
+            {filteredImages.map((photo, index) => (
               <button
                 key={index}
                 className={`cursor-pointer transition-all duration-200 ${

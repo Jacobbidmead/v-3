@@ -48,8 +48,6 @@ const Photography: React.FC<PhotoPageData> = () => {
   const data = photoData[0];
   const { title, photos } = data;
 
-  console.log(data);
-
   return (
     <>
       <ImageGallery title={title} photos={photos} />
