@@ -9,6 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "480px", // Extra small screens
+        sm: "640px", // Small screens (default in Tailwind)
+        md: "768px", // Medium screens (default in Tailwind)
+        lg: "1024px", // Large screens (default in Tailwind)
+        xl: "1280px", // Extra large screens (default in Tailwind)
+        "2xl": "1536px", // 2X extra large screens (default in Tailwind)
+        "3xl": "1920px", // Custom: 3X extra large screens
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

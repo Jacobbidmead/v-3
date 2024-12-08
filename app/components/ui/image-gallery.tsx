@@ -45,12 +45,15 @@ export function ImageGallery({ photos, title }: ImageGalleryProps) {
 
   return (
     <div className='container mx-auto my-auto p-4 min-h-full '>
-      <div className='flex lg:justify-between'>
-        <h1 className='text-2xl font-bold mb-16 text-white'>{title}</h1>
-        <div>
+      <div className='flex xs:flex-col'>
+        <h1 className='text-m mb-8 text-white'>{title}</h1>
+        <div className=''>
           {categories.map((category, index) => (
             <button
-              className='text-2xl font-bold mb-4 text-white px-2 flex xs:flex-col'
+              className='m:text-m xs:text-[20px] lg:text-[20px]font-bold mb-4 mx-[4px] pb-[3px] px-4 text-center
+        text-[rgb(198,198,198)] border border-[rgba(198,198,198,0.5)] 
+        rounded-[20px] hover:bg-[rgba(198,198,198,0.1)] 
+        transition-all duration-300'
               key={index}
               onClick={() => filterImagesByCategory(category)}>
               {category}
@@ -69,7 +72,7 @@ export function ImageGallery({ photos, title }: ImageGalleryProps) {
                 alt='Selected Image'
                 width={3000}
                 height={1800}
-                className='object-contain '
+                className='object-fill'
               />
             ) : (
               <p>Loading image...</p>
